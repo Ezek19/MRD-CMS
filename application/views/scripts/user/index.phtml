@@ -1,0 +1,37 @@
+<?php
+$this->layout()->adminMenu = $this->action(
+    'render', 'menu', null, array('menu' => $this->adminMenuId)
+);
+?>
+<h2>Admin Site</h2>
+<?php if($this->identity == null) { ?>
+    <p>To log in <a href='/user/login'>click here</a></p>
+<?php }else{ ?>
+    <p>Welcome back <?php echo $this->identity->first_name;?></p>
+    <p>To log out <a href='/user/logout'>click here</a></p>
+<?php } ?>
+
+<div id='searchForm'>
+	<h2><?php echo $this->translate('Search Site');?></h2>
+	<?php 
+	    $searchForm = new Form_SearchForm();
+	    $searchForm->setAction('/search');
+	    echo $searchForm->render();
+	?>
+	<br />
+</div>
+<div id="subNav">
+            <?php
+            echo $this->layout()->subNav;
+            ?>&nbsp;
+        </div>
+<div id="adminMenu">
+            <?php
+            echo $this->layout()->adminMenu;
+            ?>&nbsp;
+        </div>
+<div id="userForm">
+            <?php
+            echo $this->layout()->userForm;
+            ?>&nbsp;
+        </div>

@@ -1,0 +1,32 @@
+<div id="sidebar">
+<div id='searchForm'>
+	<h2><?php echo $this->translate('Search Site');?></h2>
+	<?php 
+	    $searchForm = new Form_SearchForm();
+	    $searchForm->setAction('/search');
+	    echo $searchForm->render();
+	?>
+	<br />
+</div>
+<div id="feeds">
+	<h2>Feeds</h2>
+	<p><a href='/feed/rss'>Click Here</a> to subscribe to our RSS feed.</p>
+</div>
+
+<div id="subNav">
+            <?php
+            echo $this->layout()->subNav;
+            ?>&nbsp;
+        </div>
+<div id="adminMenu">
+            <?php
+            echo $this->layout()->adminMenu;
+            ?>&nbsp;
+        </div>
+<div id="userForm">
+            <?php
+            echo $this->layout()->userForm;
+            ?>&nbsp;
+        </div>
+</div>
+

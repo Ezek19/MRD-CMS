@@ -1,0 +1,155 @@
+<?php
+echo '<?xml version="1.0" encoding="UTF-8" ?>';
+echo $this->doctype();
+$this->layout()->nav = $this->action('render', 'menu', null,
+    array('menu' => $this->mainMenuId));
+$this->layout()->adminMenu = $this->action(
+    'render', 'menu', null, array('menu' => $this->adminMenuId)
+);
+$this->layout()->userForm = $this->action('index', 'user');   
+?>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="http://localhost/skins/blues/js/ac_activex.js" type="text/javascript"></script>
+    <?php
+    $this->loadSkin($this->skin);
+    echo $this->headTitle();
+    echo $this->headScript();
+    echo $this->headLink();
+    ?>
+
+</head>
+
+<body>
+<div id="pageWrapper">
+
+<div class="search">
+        <form method="get" id="search" action="">
+          <span>
+          <input type="text" value="Search..." name="s" id="s" />
+          <input name="searchsubmit" type="image" src="/../skins/blues/images/search.gif" value="" id="searchsubmit" class="btn"  />
+          </span>
+		  </form>
+        <div class="clr"></div>
+<div id="login">
+<a href="/../user">Admin</a> | <a href="/../user/create">User Login</a>
+</div>	
+      </div>
+  
+<div id="header">
+
+<div id="logo">
+
+<h1>MRD TECH SYSTEMS</h1>
+
+</div>
+
+</div>
+
+<div id="nav">
+            <?php
+			echo $this->layout()->nav;
+			?>&nbsp;
+</div>
+
+
+<div id="banner">
+
+<script type="text/javascript">
+AC_RunFlashContent("id","flash1","width","900","height","180","quality","high","autoplay","true","loop","true","wmode","window","codebase","http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab","pluginspage","http://www.macromedia.com/go/getflashplayer","src","http://localhost/skins/blues/images/banner mrd.swf");
+</script>
+<noscript><object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab">
+<param name="movie" value="http://localhost/skins/blues/images/banner mrd.swf">
+<param name="quality" value="high">
+<param name="loop" value="true">
+<param name="wmode" value="window">
+<param name="autoplay" value="true">
+<param name="pluginurl" value="http://www.macromedia.com/go/getflashplayer"><!--[if !IE]>--></object><!--<![endif]--></object></noscript>
+
+</div>
+
+
+<div id="marquee1">
+<marquee width="900" height="15">
+<div><font color="#2E368F" face="Microsoft Sans Serif">Infromation Technology Services&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System Applications Development&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ICT Consultancy Services&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Networking (LAN, WAN, Fibre Optic, Wireless LAN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Security Systems Solutions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Office Solution &amp; Services&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Multimedia/ Animation Development&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E-commerce Solutions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Computer Hardware/ Software&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hardware/ Software Maintenance</font></div></marquee></div>
+
+<div class="sidebar">
+        <div class="gadget">
+          <h2 class="star"><span></span> Menu</h2>
+          <div class="clr"></div>
+          <ul class="sb_menu">
+            <li><a href="http://localhost">Welcome</a></li>
+            <li><a href="/../page/open/title/Services">Services</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Contact Us</a></li>
+            
+          </ul>
+        </div>
+        <div class="gadget">
+          <h2 class="star"><span>Links</span></h2>
+          <div class="clr"></div>
+          <ul class="ex_menu">
+            <li><a href="http://www.dreamtemplate.com/">DreamTemplate</a><br />
+              Over 6,000+ Premium Web Templates</li>
+            <li><a href="http://www.templatesold.com/">TemplateSOLD</a><br />
+              Premium WordPress &amp; Joomla Themes</li>
+            <li><a href="http://www.imhosted.com/">ImHosted.com</a><br />
+              Affordable Web Hosting Provider</li>
+            <li><a href="http://www.megastockphotos.com/">MegaStockPhotos</a><br />
+              Unlimited Amazing Stock Photos</li>
+            <li><a href="http://www.evrsoft.com/">Evrsoft</a><br />
+              Website Builder Software &amp; Tools</li>
+			<li><a href="http://localhost/user">Admin</a><br />
+              Administration Login</li>
+          </ul>
+        </div>
+      </div>
+	  
+<div id="main">
+            <?php
+            echo $this->layout()->content?>&nbsp;
+        </div>
+<div class="fbg">		
+<div class="fbg_resize">
+      <div class="col c1">
+        <h2><span>Image</span> Gallery</h2>
+        <a href="#"><img src="/../skins/blues/images/1.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="/../skins/blues/images/2.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="/../skins/blues/images/3.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="/../skins/blues/images/4.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="/../skins/blues/images/5.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="/../skins/blues/images/6.jpg" width="75" height="75" alt="" class="gal" /></a> </div>
+      <div class="col c2">
+        <h2><span>Services</span> Overview</h2>
+        <p>We create new applications as well as redesign legacy software.Our priorities are our customer's satisfaction, application of new technologies and delivery on time and as per budget.This short list demonstrates a general outline of our services for various business branches:</p>
+        <ul class="fbg_ul">
+          <li><a href="#">Web Design Solutions & Hosting.</a></li>
+          <li><a href="#">ICT Consultancy Services.</a></li>
+          <li><a href="#">System Applications Development.</a></li>
+        </ul>
+      </div>
+      <div class="col c3">
+        <h2><span>Contact</span> Us</h2>
+        <p class="contact_info"> <span>Address:</span>MRD Tech Systems No. 51, Kedai Bunga Tanjung, Jalan Kerja Air Lama,Ampang Jaya, 68000 Ampang, Selangor Darul Ehsan
+          <span>Telephone:</span> 603-4256 4526<br />
+          <span>FAX:</span> 603-4257 4526<br />
+          <span>Others:</span> +301 - 0125 - 01258<br />
+          <span>E-mail:</span><a href="#">admin@mrdtechsystems.com</a></br>
+		                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">mrdtech@streamyx.com</a></p>
+      </div>
+      <div class="clr"></div>
+    </div>	
+
+<div class="footer_resize">
+      <p class="lf">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright@2011 By <a href="http://ezek.mrdtechsystems.com">MRD Tech Systems</a>.</p>
+      <p class="rf">Design by Ezek<a href="http://ezek.allalla.com/"> ezek.allalla.com</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+      <div style="clear:both;"></div>
+    </div>	
+
+
+<div id="footer">
+<p><em>Powered by the Ezek CMS</em></p>
+</div>
+
+</div>
+</div>
+</body>
+
+</html>
